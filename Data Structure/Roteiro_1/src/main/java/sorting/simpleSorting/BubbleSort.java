@@ -29,8 +29,5 @@ public class BubbleSort<T extends Comparable<T>> extends AbstractSorting<T> {
 			rightIndex = rightIndex - 1;
 		}     
 	}
-	
-	
-	
 }
  
