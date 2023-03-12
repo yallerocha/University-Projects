@@ -10,7 +10,6 @@ def bubblesort(lista):
                 houve_troca = True
         if not houve_troca: return
 
-
 lista = [1, 5, 3, 7, 2, 9, 0]
 bubblesort(lista)
 print(lista)
