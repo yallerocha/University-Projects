@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_01/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_01/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_02/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_02/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_03/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_03/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_04/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_04/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_05/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_05/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_06/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_06/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_07/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_07/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_08/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_08/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_09/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_09/src/test/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_10/src/main/java"/>
+	<classpathentry kind="src" path="src/Data Structure/Roteiro_10/src/test/java"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_01"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_02/src"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_03/src"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_03/testes"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_04/src"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_05/src"/>
+	<classpathentry kind="src" path="src/Object Oriented Programming/Lab_05/tests"/>
+	<classpathentry kind="lib" path="src/Data Structure/Roteiro_01/target/submission-1.0.jar"/>
+	<classpathentry kind="lib" path="src/Data Structure/Roteiro_02/target/submission-1.0.jar"/>
+	<classpathentry kind="lib" path="src/Data Structure/Roteiro_03/target/submission-1.0.jar"/>
+	<classpathentry kind="lib" path="src/Data Structure/Roteiro_04/target/submission-1.0.jar"/>
+	<classpathentry kind="lib" path="src/Data Structure/Roteiro_06/target/submission-1.0.jar"/>
+	<classpathentry kind="lib" path="src/Object Oriented Programming/Lab_05/lib/biblitex.jar"/>
+	<classpathentry kind="output" path="src/Data Structure/Roteiro_01/target/classes"/>
+</classpath>
