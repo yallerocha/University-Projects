@@ -3,6 +3,7 @@ package adt.hashtable.closed;
 import adt.hashtable.hashfunction.HashFunction;
 import adt.hashtable.hashfunction.HashFunctionClosedAddressMethod;
 import adt.hashtable.hashfunction.HashFunctionFactory;
+import util.Util;
 
 public class HashtableClosedAddressImpl<T> extends
 		AbstractHashtableClosedAddress<T> {
@@ -53,8 +54,13 @@ public class HashtableClosedAddressImpl<T> extends
 	 * prime.
 	 */
 	int getPrimeAbove(int number) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(Util.isPrime(number)) {
+			return number;
+		}
+		while(!Util.isPrime(number)) {
+			number++;
+		}
+		return number;
 	}
 
 	@Override
