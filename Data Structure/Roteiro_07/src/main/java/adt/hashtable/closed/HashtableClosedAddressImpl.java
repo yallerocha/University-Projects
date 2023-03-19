@@ -5,6 +5,7 @@ import adt.hashtable.hashfunction.HashFunctionClosedAddress;
 import adt.hashtable.hashfunction.HashFunctionClosedAddressMethod;
 import adt.hashtable.hashfunction.HashFunctionFactory;
 import util.Util;
+import java.util.LinkedList;
 
 public class HashtableClosedAddressImpl<T> extends
 		AbstractHashtableClosedAddress<T> {
@@ -62,27 +63,54 @@ public class HashtableClosedAddressImpl<T> extends
 		return number;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void insert(T element) {
-		int key;
+		int key = ((HashFunctionClosedAddress<T>) hashFunction).hash(element);
+		if((table[key]) == null) {
+			table[key] = new LinkedList<T>();
+		}
+		if(!((LinkedList<T>) table[key]).isEmpty()) {
+			COLLISIONS++;
+		}
+		((LinkedList<T>) table[key]).addFirst(element);
+		elements++;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void remove(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int key = ((HashFunctionClosedAddress<T>) hashFunction).hash(element);
+		((LinkedList<T>) table[key]).remove(element);
+		elements--;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int key = ((HashFunctionClosedAddress<T>) hashFunction).hash(element);
+		if(table[key] == null) {
+			return null;
+		}
+		int index = ((LinkedList<T>) table[key]).indexOf(element);
+		if (index == -1) {
+			return null;
+		}
+		return ((LinkedList<T>) table[key]).get(index);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public int indexOf(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int key = ((HashFunctionClosedAddress<T>) hashFunction).hash(element);
+		if(table[key] == null) {
+			return -1;
+		}
+		int index = ((LinkedList<T>) table[key]).indexOf(element);
+		if(index == -1) {
+			return -1;
+		}
+		return key; 
 	}
 
 }
