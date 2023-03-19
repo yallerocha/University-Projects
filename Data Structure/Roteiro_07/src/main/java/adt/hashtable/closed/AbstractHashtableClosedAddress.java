@@ -13,8 +13,7 @@ import adt.hashtable.AbstractHashtable;
  * AbstractHashtable is only a resource for unifying both kinds of hashtables
  * (closed and open addressing). Thee real hashtables must inherit this class.
  */
-public abstract class AbstractHashtableClosedAddress<T> extends
-		AbstractHashtable<T> {
+public abstract class AbstractHashtableClosedAddress<T> extends AbstractHashtable<T> {
 
 	public AbstractHashtableClosedAddress() {
 		super();

@@ -1,6 +1,7 @@
 package adt.hashtable.closed;
 
 import adt.hashtable.hashfunction.HashFunction;
+import adt.hashtable.hashfunction.HashFunctionClosedAddress;
 import adt.hashtable.hashfunction.HashFunctionClosedAddressMethod;
 import adt.hashtable.hashfunction.HashFunctionFactory;
 import util.Util;
@@ -30,8 +31,7 @@ public class HashtableClosedAddressImpl<T> extends
 	 */
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public HashtableClosedAddressImpl(int desiredSize,
-			HashFunctionClosedAddressMethod method) {
+	public HashtableClosedAddressImpl(int desiredSize, HashFunctionClosedAddressMethod method) {
 		int realSize = desiredSize;
 
 		if (method == HashFunctionClosedAddressMethod.DIVISION) {
@@ -40,8 +40,7 @@ public class HashtableClosedAddressImpl<T> extends
 														// above
 		}
 		initiateInternalTable(realSize);
-		HashFunction function = HashFunctionFactory.createHashFunction(method,
-				realSize);
+		HashFunction function = HashFunctionFactory.createHashFunction(method, realSize);
 		this.hashFunction = function;
 	}
 
@@ -65,8 +64,7 @@ public class HashtableClosedAddressImpl<T> extends
 
 	@Override
 	public void insert(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int key;
 	}
 
 	@Override
