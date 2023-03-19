@@ -1,6 +1,7 @@
 package sorting.divideAndConquer.quicksort3;
 
 import sorting.AbstractSorting;
+import util.Util;
 
 /**
  * A classe QuickSortMedianOfThree representa uma variação do QuickSort que
@@ -34,10 +35,10 @@ public class QuickSortMedianOfThree<T extends Comparable<T>> extends
 		for(int j = i - 1; j >= leftIndex; j--) {
 			if(array[j].compareTo(pivot) >= 0) {
 				i--;
-				util.Util.swap(array, i, j);
+				Util.swap(array, i, j);
 			}
 		}
-		util.Util.swap(array, rightIndex - 1, i);
+		Util.swap(array, rightIndex - 1, i);
 		
 		return i; 
 	}
@@ -46,19 +47,18 @@ public class QuickSortMedianOfThree<T extends Comparable<T>> extends
 		int intermediaryIndex = (leftIndex + rightIndex) / 2;
 		
 		if(array[leftIndex].compareTo(array[rightIndex]) > 0) {
-			util.Util.swap(array, leftIndex, rightIndex);
+			Util.swap(array, leftIndex, rightIndex);
 		}
 		if (array[intermediaryIndex].compareTo(array[rightIndex]) > 0) {
-			util.Util.swap(array, intermediaryIndex, rightIndex);
+			Util.swap(array, intermediaryIndex, rightIndex);
 		}
 		if (array[leftIndex].compareTo(array[intermediaryIndex]) > 0) {
-			util.Util.swap(array, leftIndex, intermediaryIndex);
+			Util.swap(array, leftIndex, intermediaryIndex);
 		}
-		util.Util.swap(array, intermediaryIndex, rightIndex - 1);
+		Util.swap(array, intermediaryIndex, rightIndex - 1);
 		
 		T pivot = array[rightIndex - 1];
 		
 		return pivot;
 	}
-	
 }
