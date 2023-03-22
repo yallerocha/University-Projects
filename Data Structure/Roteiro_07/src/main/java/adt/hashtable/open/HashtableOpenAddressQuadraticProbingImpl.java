@@ -28,6 +28,7 @@ public class HashtableOpenAddressQuadraticProbingImpl<T extends Storable>
 				probe++;
 			}
 		}
+		throw new HashtableOverflowException();
 	}
 
 	@Override
@@ -47,7 +48,6 @@ public class HashtableOpenAddressQuadraticProbingImpl<T extends Storable>
 				probe++;
 			}
 		}
-		throw new HashtableOverflowException();
 	}
 
 	@SuppressWarnings("unchecked")
