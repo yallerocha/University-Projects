@@ -1,8 +1,5 @@
 package adt.hashtable.open;
 
-import java.util.LinkedList;
-
-import adt.hashtable.hashfunction.HashFunctionClosedAddress;
 import adt.hashtable.hashfunction.HashFunctionClosedAddressMethod;
 import adt.hashtable.hashfunction.HashFunctionLinearProbing;
 

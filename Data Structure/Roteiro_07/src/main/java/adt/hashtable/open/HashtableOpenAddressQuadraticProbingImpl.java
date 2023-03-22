@@ -1,7 +1,6 @@
 package adt.hashtable.open;
 
 import adt.hashtable.hashfunction.HashFunctionClosedAddressMethod;
-import adt.hashtable.hashfunction.HashFunctionLinearProbing;
 import adt.hashtable.hashfunction.HashFunctionQuadraticProbing;
 
 public class HashtableOpenAddressQuadraticProbingImpl<T extends Storable>
