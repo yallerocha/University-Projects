@@ -28,6 +28,7 @@ AbstractHashtableOpenAddress<T> {
 				probe++;
 			}
 		}
+		throw new HashtableOverflowException();
 	}
 
 	@Override
