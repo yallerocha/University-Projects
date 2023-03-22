@@ -1,6 +1,7 @@
 package adt.hashtable.open;
 
 import adt.hashtable.hashfunction.HashFunctionClosedAddressMethod;
+import adt.hashtable.hashfunction.HashFunctionLinearProbing;
 import adt.hashtable.hashfunction.HashFunctionQuadraticProbing;
 
 public class HashtableOpenAddressQuadraticProbingImpl<T extends Storable>
@@ -15,25 +16,70 @@ public class HashtableOpenAddressQuadraticProbingImpl<T extends Storable>
 
 	@Override
 	public void insert(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int probe = 0;
+
+		while(probe < table.length - 1) {
+			int key = ((HashFunctionQuadraticProbing<T>) hashFunction).hash(element, probe);
+			if(table[key] == null || table[key].equals(new DELETED())) {
+				table[key] = element;
+				elements++;
+				return;
+			} else {
+				COLLISIONS++;
+				probe++;
+			}
+		}
 	}
 
 	@Override
 	public void remove(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int probe = 0;
+
+		while(probe < table.length - 1) {
+			int key = ((HashFunctionQuadraticProbing<T>) hashFunction).hash(element, probe);
+			if(table[key] == null) {
+				return;
+			}
+			if(table[key].equals(element)) {
+				table[key] = new DELETED();
+				elements--;
+				return;
+			} else {
+				probe++;
+			}
+		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int probe = 0;
+
+		while(probe < table.length - 1) {
+			int key = ((HashFunctionQuadraticProbing<T>) hashFunction).hash(element, probe);
+			if(table[key] == null || table[key].equals(element) ) {
+				return (T) table[key];
+			} else {
+				probe++;
+			}
+		}
+		return null;
 	}
 
 	@Override
 	public int indexOf(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int probe = 0;
+
+		while(probe < table.length - 1) {
+			int key = ((HashFunctionQuadraticProbing<T>) hashFunction).hash(element, probe);
+			if (table[key] == null) {
+				return -1;
+			} else if (table[key].equals(element)) {
+				return key;
+			} else {
+				probe++;
+			}
+		}
+		return -1;
 	}
 }
