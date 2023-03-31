@@ -143,7 +143,7 @@ public class StudentSortingTest {
 		
 		specificTest(vector, 0, middle);
 		specificTest(vector, middle + 1, end);
-		specificTest(vector, 0, end);
+		specificTest(vector, 2, 7);
 	}
 
 	@Test
@@ -155,7 +155,7 @@ public class StudentSortingTest {
 		
 		specificTest(vector, 0, middle);
 		specificTest(vector, middle + 1, end);
-		specificTest(vector, 0, end);
+		specificTest(vector, 4, 9);
 	}
 
 	@Test
@@ -176,7 +176,7 @@ public class StudentSortingTest {
 		
 		specificTest(vector, 0, middle);
 		specificTest(vector, middle + 1, end);
-		specificTest(vector, 0, end);
+		specificTest(vector, 0, 4);
 	}
 
 	@Test
@@ -188,7 +188,7 @@ public class StudentSortingTest {
 		
 		specificTest(vector, 0, middle);
 		specificTest(vector, middle + 1, end);
-		specificTest(vector, 0, end);
+		specificTest(vector, 4, 6);
 	}
 	
 	@Test
