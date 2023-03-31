@@ -88,16 +88,6 @@ public class StudentSortingTest {
 		Arrays.sort(copy1);
 		Assert.assertArrayEquals(copy1, array);
 	}
-	
-	public void specificTest(Integer[] array, int leftIndex, int rightIndex) {
-		Integer[] copy1 = {};
-		if(array.length > 0){
-			copy1 = Arrays.copyOf(array, array.length);			
-		}
-		implementation.sort(array, leftIndex, rightIndex);
-		Arrays.sort(copy1, leftIndex, rightIndex + 1);
-		Assert.assertArrayEquals(copy1, array);
-	}
 
 	@Test
 	public void testSort01() {
@@ -132,6 +122,24 @@ public class StudentSortingTest {
 	@Test
 	public void testSort07() {
 		genericTest(vetorTamDois);
+	}
+	
+	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
+			/**
+			 * O ALUNO PODE IMPLEMENTAR METODOS DE ORDENAÇÃO TESTANDO O SORT COM TRES
+			 * ARGUMENTOS PARA TESTAR A ORDENACAO EM UM PEDAÇO DO ARRAY. DICA: PROCUREM
+			 * SEGUIR A ESTRUTURA DOS MÉTODOS DE TESTE ACIMA DESCRITOS, ORDENANDO APENAS
+			 * UMA PARTE DO ARRAY.
+			 */
+	
+	public void specificTest(Integer[] array, int leftIndex, int rightIndex) {
+		Integer[] copy1 = {};
+		if(array.length > 0){
+			copy1 = Arrays.copyOf(array, array.length);			
+		}
+		implementation.sort(array, leftIndex, rightIndex);
+		Arrays.sort(copy1, leftIndex, rightIndex + 1);
+		Assert.assertArrayEquals(copy1, array);
 	}
 	
 	@Test
@@ -214,12 +222,4 @@ public class StudentSortingTest {
 		specificTest(vector, middle + 1, end);
 		specificTest(vector, 0, end);
 	}
-	
-	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
-		/**
-		 * O ALUNO PODE IMPLEMENTAR METODOS DE ORDENAÇÃO TESTANDO O SORT COM TRES
-		 * ARGUMENTOS PARA TESTAR A ORDENACAO EM UM PEDAÇO DO ARRAY. DICA: PROCUREM
-		 * SEGUIR A ESTRUTURA DOS MÉTODOS DE TESTE ACIMA DESCRITOS, ORDENANDO APENAS
-		 * UMA PARTE DO ARRAY.
-		 */
 }
