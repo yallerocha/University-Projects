@@ -27,7 +27,7 @@ public class QuickSortMedianOfThree<T extends Comparable<T>> extends
 			sort(array, pivot + 1, rightIndex);
 		}
 	}
-	
+
 	private int partition(T[] array, int leftIndex, int rightIndex) {
 		T pivot = medianOfThree(array, leftIndex, rightIndex);
 		

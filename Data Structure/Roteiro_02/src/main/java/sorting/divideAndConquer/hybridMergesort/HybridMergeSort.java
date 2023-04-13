@@ -6,16 +6,16 @@ import sorting.AbstractSorting;
 
 
 /**
- * A classe HybridMergeSort representa a implementação de uma variação do
+ * A classe HybridMergeSort representa a implementaï¿½ï¿½o de uma variaï¿½ï¿½o do
  * MergeSort que pode fazer uso do InsertionSort (um algoritmo hibrido) da
  * seguinte forma: o MergeSort Ã© aplicado a entradas maiores a um determinado
  * limite. Caso a entrada tenha tamanho menor ou igual ao limite o algoritmo usa
  * o InsertionSort.
  * 
- * A implementação hibrida deve considerar os seguintes detalhes:
+ * A implementaï¿½ï¿½o hibrida deve considerar os seguintes detalhes:
  * - Ter contadores das quantidades de MergeSorts e InsertionSorts aplicados, de forma
- *   que essa informação possa ser capturada pelo teste.
- * - A cada chamado do mÃ©todo de sort(T[] array) esses contadores são resetados. E a cada chamada
+ *   que essa informaï¿½ï¿½o possa ser capturada pelo teste.
+ * - A cada chamado do mÃ©todo de sort(T[] array) esses contadores sï¿½o resetados. E a cada chamada
  *   interna de um merge ou insertion, os contadores MERGESORT_APPLICATIONS e
  *   INSERTIONSORT_APPLICATIONS sÃ£o incrementados.
  * - O InsertionSort utilizado no algoritmo hÃ­brido deve ser in-place.
@@ -39,7 +39,7 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 	}
 	
 	public void hybridMergeSort(T[] array, int leftIndex, int rightIndex) {
-		if(rightIndex - leftIndex + 1 <= SIZE_LIMIT) {
+		if(rightIndex - leftIndex <= SIZE_LIMIT) {
 			insertionSort(array, leftIndex, rightIndex);
 			INSERTIONSORT_APPLICATIONS++;
 			return;
@@ -50,10 +50,9 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 		sort(array, meio + 1, rightIndex);
 		merge(array, leftIndex, meio, rightIndex);
 		MERGESORT_APPLICATIONS++;
-		} 
+	} 
 
 	private void merge(T[] array, int leftIndex, int meio, int rightIndex) {
-
 		T[] left = Arrays.copyOfRange(array, leftIndex, meio + 1);
 		T[] rigth = Arrays.copyOfRange(array, meio + 1, rightIndex + 1);
 	    
@@ -78,7 +77,7 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 	}
 	
 	private void insertionSort(T[] array, int leftIndex, int rightIndex) {
-		if(rightIndex - leftIndex + 1 <= 1) {
+		if(rightIndex - leftIndex <= 0) {
 			return;
 		}
 		for(int i = leftIndex + 1; i <= rightIndex; i++) {
