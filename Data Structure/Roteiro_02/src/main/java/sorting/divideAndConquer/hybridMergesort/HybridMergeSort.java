@@ -29,25 +29,27 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 	 */
 	public static final int SIZE_LIMIT = 4;
 
-	protected static int MERGESORT_APPLICATIONS;
-	protected static int INSERTIONSORT_APPLICATIONS;
+	protected  int MERGESORT_APPLICATIONS;
+	protected  int INSERTIONSORT_APPLICATIONS;
 	
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		MERGESORT_APPLICATIONS = 0;
-		INSERTIONSORT_APPLICATIONS = 0;
-		hybridMergeSort(array, leftIndex, rightIndex);
+		if(rightIndex > leftIndex) {
+			MERGESORT_APPLICATIONS = 0;
+			INSERTIONSORT_APPLICATIONS = 0;
+			hybridMergeSort(array, leftIndex, rightIndex);
+		}
 	}
 	
 	public void hybridMergeSort(T[] array, int leftIndex, int rightIndex) {
-		if(rightIndex - leftIndex <= SIZE_LIMIT) {
+		if(rightIndex - leftIndex + 1 <= SIZE_LIMIT) {
 			insertionSort(array, leftIndex, rightIndex);
 			INSERTIONSORT_APPLICATIONS++;
 			return;
 		}
 		int meio = (rightIndex + leftIndex) / 2;
 			
-		sort(array, leftIndex, meio);
-		sort(array, meio + 1, rightIndex);
+		hybridMergeSort(array, leftIndex, meio);
+		hybridMergeSort(array, meio + 1, rightIndex);
 		merge(array, leftIndex, meio, rightIndex);
 		MERGESORT_APPLICATIONS++;
 	} 
@@ -77,9 +79,6 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 	}
 	
 	private void insertionSort(T[] array, int leftIndex, int rightIndex) {
-		if(rightIndex - leftIndex <= 0) {
-			return;
-		}
 		for(int i = leftIndex + 1; i <= rightIndex; i++) {
 			int j = i - 1;
 			T chave = array[i]; 
@@ -87,7 +86,7 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 			while(j >= leftIndex && array[j].compareTo(chave) > 0) {
 				array[j + 1] = array[j];
 				j = j - 1;
-			}
+			} 
 			array[j + 1] = chave;
 		}
 	}

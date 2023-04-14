@@ -10,7 +10,7 @@ import sorting.AbstractSorting;
 //import sorting.divideAndConquer.MergeSort;
 //import sorting.divideAndConquer.QuickSort;
 import sorting.divideAndConquer.hybridMergesort.HybridMergeSort;
-//import sorting.divideAndConquer.quicksort3.QuickSortMedianOfThree;
+import sorting.divideAndConquer.quicksort3.QuickSortMedianOfThree;
 
 public class StudentSortingTest {
 
@@ -42,7 +42,7 @@ public class StudentSortingTest {
 	 * do aluno
 	 */
 	private void getImplementation() {
-		this.implementation = new HybridMergeSort<Integer>();
+		this.implementation = new QuickSortMedianOfThree<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -86,40 +86,54 @@ public class StudentSortingTest {
 		Arrays.sort(copy1);
 		Assert.assertArrayEquals(copy1, array);
 	}
+	
+	public void HybridTest(AbstractSorting<Integer> implementation, int insertion, int merge ) {
+		if(implementation instanceof HybridMergeSort) {
+			Assert.assertEquals(insertion, ((HybridMergeSort<Integer>) implementation).getInsertionSortApplications());
+			Assert.assertEquals(merge,((HybridMergeSort<Integer>) implementation).getMergeSortApplications());
+		}
+	}
 
 	@Test
 	public void testSort01() {
 		genericTest(vetorTamPar);
+		HybridTest(implementation, 2, 1);
 	}
 
 	@Test
 	public void testSort02() {
 		genericTest(vetorTamImpar);
+		HybridTest(implementation, 4, 3);
 	}
 
 	@Test
 	public void testSort03() {
 		genericTest(vetorVazio);
+		HybridTest(implementation, 0, 0);
 	}
 
 	@Test
 	public void testSort04() {
 		genericTest(vetorValoresIguais);
+		HybridTest(implementation, 2, 1);
 	}
 
 	@Test
 	public void testSort05() {
 		genericTest(vetorValoresRepetidos);
+		HybridTest(implementation, 2, 1);
 	}
 	
 	@Test
 	public void testSort06() {
 		genericTest(vetorUnitario);
+		HybridTest(implementation, 0, 0);
 	}
 	
 	@Test
 	public void testSort07() {
 		genericTest(vetorTamDois);
+		HybridTest(implementation, 1, 0);
 	}
 	
 	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
