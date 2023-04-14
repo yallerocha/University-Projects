@@ -7,3 +7,33 @@
   <level>FINE</level>
   <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 192.168.0.103 at 12-04-2023 12*21*27</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-04-13T21:50:48.217-0300</date>
+  <logger>YALLE ROCHA SILVA</logger>
+  <level>FINE</level>
+  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 192.168.0.103 at 13-04-2023 21*50*48</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-04-14T10:33:06.327-0300</date>
+  <logger>YALLE ROCHA SILVA</logger>
+  <level>FINE</level>
+  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 150.165.42.158 at 14-04-2023 10*33*06</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-04-14T18:45:40.969-0300</date>
+  <logger>YALLE ROCHA SILVA</logger>
+  <level>FINE</level>
+  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 192.168.0.103 at 14-04-2023 18*45*40</message>
+</record>
