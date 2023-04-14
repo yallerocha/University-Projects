@@ -29,8 +29,8 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 	 */
 	public static final int SIZE_LIMIT = 4;
 
-	protected  int MERGESORT_APPLICATIONS;
-	protected  int INSERTIONSORT_APPLICATIONS;
+	protected static int MERGESORT_APPLICATIONS;
+	protected static int INSERTIONSORT_APPLICATIONS;
 	
 	public void sort(T[] array, int leftIndex, int rightIndex) {
 		if(rightIndex > leftIndex) {
