@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import sorting.AbstractSorting;
 
-
 /**
  * A classe HybridMergeSort representa a implementa��o de uma varia��o do
  * MergeSort que pode fazer uso do InsertionSort (um algoritmo hibrido) da
