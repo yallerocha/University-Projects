@@ -43,14 +43,14 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 		if(rightIndex - leftIndex + 1 <= SIZE_LIMIT) {
 			insertionSort(array, leftIndex, rightIndex);
 			INSERTIONSORT_APPLICATIONS++;
-			return;
-		}
-		int meio = (rightIndex + leftIndex) / 2;
+		} else {
+			int meio = (rightIndex + leftIndex) / 2;
 			
-		hybridMergeSort(array, leftIndex, meio);
-		hybridMergeSort(array, meio + 1, rightIndex);
-		merge(array, leftIndex, meio, rightIndex);
-		MERGESORT_APPLICATIONS++;
+			hybridMergeSort(array, leftIndex, meio);
+			hybridMergeSort(array, meio + 1, rightIndex);
+			merge(array, leftIndex, meio, rightIndex);
+			MERGESORT_APPLICATIONS++;
+		}
 	} 
 
 	private void merge(T[] array, int leftIndex, int meio, int rightIndex) {
