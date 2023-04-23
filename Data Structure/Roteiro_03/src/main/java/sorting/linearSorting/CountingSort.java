@@ -18,36 +18,35 @@ public class CountingSort extends AbstractSorting<Integer> {
 	@Override
 	public void sort(Integer[] A, int leftIndex, int rightIndex) {
 		
-		if(A.length <= 1) {
-			return;
-		}
-		for(int i = 0; i < A.length; i++) {
-			A[i] = A[i] + 1;
-		}
-		int k = A[0];
-		for(int num: A) {
-			if(num > k) {
-				k = num;
+		if(leftIndex < rightIndex) {
+			for(int i = 0; i < A.length; i++) {
+				A[i] = A[i] + 1;
 			}
-		}                                          
-		Integer[] C = new Integer[k + 1];
-		Integer[] B = new Integer[A.length];
-		
-		for(int i = 0; i < k; i++) {               
-			C[i] = 0;                              
-		} 
-		for(int j = 0; j < A.length; j++) {       
-			C[A[j] - 1] = C[A[j] - 1] + 1;         
-		}
-		for(int i = 1; i < k; i++) {                 
-			C[i] = C[i] + C[i - 1];                
-		}
-		for(int j = A.length - 1; j >= 0; j--) {  
-			B[C[A[j] - 1] - 1] = A[j];				   
-			C[A[j] - 1] = C[A[j] - 1] - 1;
-		}
-		for(int i = 0; i < A.length; i++) {         
-			A[i] = B[i] - 1;
+			int k = A[0];
+			for(int num: A) {
+				if(num > k) {
+					k = num;
+				}
+			}                                          
+			Integer[] C = new Integer[k + 1];
+			Integer[] B = new Integer[A.length];
+			
+			for(int i = 0; i < k; i++) {               
+				C[i] = 0;                              
+			} 
+			for(int j = 0; j < A.length; j++) {       
+				C[A[j] - 1] = C[A[j] - 1] + 1;         
+			}
+			for(int i = 1; i < k; i++) {                 
+				C[i] = C[i] + C[i - 1];                
+			}
+			for(int j = A.length - 1; j >= 0; j--) {  
+				B[C[A[j] - 1] - 1] = A[j];				   
+				C[A[j] - 1] = C[A[j] - 1] - 1;
+			}
+			for(int i = 0; i < A.length; i++) {         
+				A[i] = B[i] - 1;
+			}
 		}
 	}
 }
