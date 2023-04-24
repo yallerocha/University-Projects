@@ -14,33 +14,30 @@ import sorting.AbstractSorting;
  *
  */
 public class CountingSort extends AbstractSorting<Integer> {
-
+	
 	@Override
 	public void sort(Integer[] A, int leftIndex, int rightIndex) {
-		
-		if(leftIndex < rightIndex) {
-			int length = rightIndex - leftIndex + 1;
-			int k = getHighestValue(A,leftIndex, rightIndex);
-			
-			int[] C = new int[k + 1];
-			Integer[] B = new Integer[length];
-			//contagem
-			for(int j = leftIndex; j <= rightIndex; j++) {       
-				C[A[j]] = C[A[j]] + 1;         
-			}
-			// soma
-			for(int i = 1; i < C.length; i++) {                 
-				C[i] = C[i] + C[i - 1];                
-			}
-			
-			for(int j = rightIndex; j >= leftIndex; j--) {  
-				B[C[A[j]]-1] = A[j];				   
-				C[A[j]] = C[A[j]] - 1;
-			}
-			for(int i = leftIndex; i <= rightIndex; i++) {         
-				A[i] = B[i];
-			}
-		}
+	    if (leftIndex < rightIndex) {
+	        int length = rightIndex - leftIndex + 1;
+	        int k = getHighestValue(A, leftIndex, rightIndex);
+
+	        int[] C = new int[k + 1];
+	        Integer[] B = new Integer[length];
+	        
+	        for (int j = leftIndex; j <= rightIndex; j++) {
+	            C[A[j]] = C[A[j]] + 1;
+	        }
+	        for (int i = 1; i < C.length; i++) {
+	            C[i] = C[i] + C[i - 1];
+	        }
+	        for (int j = rightIndex; j >= leftIndex; j--) {
+	            B[C[A[j]] - 1] = A[j];
+	            C[A[j]] = C[A[j]] - 1;
+	        }
+	        for (int i = leftIndex; i <= rightIndex; i++) {
+	            A[i] = B[i - leftIndex];
+	        }
+	    }
 	}
 	
 	private int getHighestValue(Integer[] A, int leftIndex, int rightIndex) {
