@@ -120,6 +120,11 @@ public class StudentSortingTest {
 			genericTest(vetorValoresNegativos);
 		}
 	}
+	
+	@Test
+	public void testSort07() {
+		genericTest(vetorTamDois);
+	}
 
 	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
 	/**
