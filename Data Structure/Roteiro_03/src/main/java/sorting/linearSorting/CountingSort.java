@@ -19,34 +19,37 @@ public class CountingSort extends AbstractSorting<Integer> {
 	public void sort(Integer[] A, int leftIndex, int rightIndex) {
 		
 		if(leftIndex < rightIndex) {
-			for(int i = 0; i < A.length; i++) {
-				A[i] = A[i] + 1;
-			}
-			int k = A[0];
-			for(int num: A) {
-				if(num > k) {
-					k = num;
-				}
-			}                                          
-			Integer[] C = new Integer[k + 1];
-			Integer[] B = new Integer[A.length];
+			int length = rightIndex - leftIndex + 1;
+			int k = getHighestValue(A,leftIndex, rightIndex);
 			
-			for(int i = 0; i < k; i++) {               
-				C[i] = 0;                              
-			} 
-			for(int j = 0; j < A.length; j++) {       
-				C[A[j] - 1] = C[A[j] - 1] + 1;         
+			int[] C = new int[k + 1];
+			Integer[] B = new Integer[length];
+			//contagem
+			for(int j = leftIndex; j <= rightIndex; j++) {       
+				C[A[j]] = C[A[j]] + 1;         
 			}
-			for(int i = 1; i < k; i++) {                 
+			// soma
+			for(int i = 1; i < C.length; i++) {                 
 				C[i] = C[i] + C[i - 1];                
 			}
-			for(int j = A.length - 1; j >= 0; j--) {  
-				B[C[A[j] - 1] - 1] = A[j];				   
-				C[A[j] - 1] = C[A[j] - 1] - 1;
+			
+			for(int j = rightIndex; j >= leftIndex; j--) {  
+				B[C[A[j]]-1] = A[j];				   
+				C[A[j]] = C[A[j]] - 1;
 			}
-			for(int i = 0; i < A.length; i++) {         
-				A[i] = B[i] - 1;
+			for(int i = leftIndex; i <= rightIndex; i++) {         
+				A[i] = B[i];
 			}
 		}
+	}
+	
+	private int getHighestValue(Integer[] A, int leftIndex, int rightIndex) {
+		int k = A[leftIndex];
+		for(int i = leftIndex; i <= rightIndex; i++) {
+			if(A[i] > k) {
+				k = A[i];
+			}
+		}
+		return k;
 	}
 }
