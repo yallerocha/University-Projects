@@ -2,18 +2,8 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-10-30T06:10:18.259-0300</date>
+  <date>2023-04-24T20:40:35.331-0300</date>
   <logger>YALLE ROCHA SILVA</logger>
   <level>FINE</level>
-  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 192.168.0.107 at 30-10-2022 06*10*18</message>
-</record>
-</log>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2022-10-30T13:19:11.202-0300</date>
-  <logger>YALLE ROCHA SILVA</logger>
-  <level>FINE</level>
-  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 172.28.144.1 at 30-10-2022 13*19*11</message>
+  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 192.168.0.103 at 24-04-2023 20*40*35</message>
 </record>

@@ -10,45 +10,50 @@ import sorting.AbstractSorting;
  */
 public class ExtendedCountingSort extends AbstractSorting<Integer> {
 
-	@Override
-	public void sort(Integer[] A, int leftIndex, int rightIndex) {
-		
-		if(leftIndex < rightIndex) {
-			for(int i = 0; i < A.length; i++) {
-				A[i] = A[i] + 1;
-			}
-			int max = 0;                            
-			int min = 0;                            
-			                                        
-			for(int num: A) {                       
-				if(num > max) {
-					max = num;
-				}
-				if(num < min) {
-					min = num;
-				}
-			}
-			int k = max - min + 1;  
-			
-			Integer[] C = new Integer[k];
-			Integer[] B = new Integer[A.length];
-			
-			for(int i = 0; i < k; i++) {               
-				C[i] = 0;                              
-			} 
-			for(int j = 0; j < A.length; j++) {       
-				C[A[j] - min] = C[A[j] - min] + 1;         
-			}
-			for(int i = 1; i < k; i++) {                 
-				C[i] = C[i] + C[i - 1];                
-			} 
-			for(int j = A.length - 1; j >= 0; j--) {  
-				B[C[A[j] - min] - 1] = A[j];				   
-				C[A[j] - min] = C[A[j] - min] - 1;
-			}
-			for(int i = 0; i < A.length; i++) {         
-				A[i] = B[i] - 1;
-			}
-		}  
-	}
+	 @Override
+	    public void sort(Integer[] A, int leftIndex, int rightIndex) {
+
+	        if (leftIndex < rightIndex) {
+	            int min = getMinValue(A, leftIndex, rightIndex);
+	            int max = getMaxValue(A, leftIndex, rightIndex);
+
+	            int range = max - min + 1;
+	            int[] C = new int[range];
+	            Integer[] B = new Integer[rightIndex - leftIndex + 1];
+
+	            for (int j = leftIndex; j <= rightIndex; j++) {
+	                C[A[j] - min]++; 
+	            }
+	            for (int i = 1; i < C.length; i++) {
+	                C[i] += C[i - 1];
+	            }
+	            for (int j = rightIndex; j >= leftIndex; j--) {
+	                B[C[A[j] - min] - 1] = A[j];
+	                C[A[j] - min]--;
+	            }
+	            for (int i = leftIndex; i <= rightIndex; i++) {
+	                A[i] = B[i - leftIndex];
+	            }
+	        }
+	    }
+
+	    private int getMinValue(Integer[] A, int leftIndex, int rightIndex) {
+	        int min = A[leftIndex];
+	        for (int i = leftIndex + 1; i <= rightIndex; i++) {
+	            if (A[i] < min) {
+	                min = A[i];
+	            }
+	        }
+	        return min;
+	    }
+
+	    private int getMaxValue(Integer[] A, int leftIndex, int rightIndex) {
+	        int max = A[leftIndex];
+	        for (int i = leftIndex + 1; i <= rightIndex; i++) {
+	            if (A[i] > max) {
+	                max = A[i];
+	            }
+	        }
+	        return max;
+	    }
 }
