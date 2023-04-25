@@ -18,11 +18,10 @@ public class CountingSort extends AbstractSorting<Integer> {
 	@Override
 	public void sort(Integer[] A, int leftIndex, int rightIndex) {
 	    if (leftIndex < rightIndex) {
-	        int length = rightIndex - leftIndex + 1;
 	        int k = getHighestValue(A, leftIndex, rightIndex);
 
 	        int[] C = new int[k + 1];
-	        Integer[] B = new Integer[length];
+	        Integer[] B = new Integer[rightIndex - leftIndex + 1];
 	        
 	        for (int j = leftIndex; j <= rightIndex; j++) {
 	            C[A[j]]++;
