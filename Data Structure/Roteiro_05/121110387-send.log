@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-11T14:50:48.861-0300</date>
+  <logger>YALLE ROCHA SILVA</logger>
+  <level>FINE</level>
+  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 150.165.74.39 at 11-05-2023 14*50*48</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-11T21:52:37.737-0300</date>
+  <logger>YALLE ROCHA SILVA</logger>
+  <level>FINE</level>
+  <message>File 121110387-YALLE ROCHA SILVA.zip was received. It was sent by YALLE ROCHA SILVA from IP 192.168.0.103 at 11-05-2023 21*52*37</message>
+</record>
