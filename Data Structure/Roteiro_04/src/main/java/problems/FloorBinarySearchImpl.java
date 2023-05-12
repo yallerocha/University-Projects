@@ -8,7 +8,6 @@ public class FloorBinarySearchImpl implements Floor {
 		if(array.length == 0) {
 			return null;
 		}
-		
 		Integer left = 0;                                            
 		Integer rigth = array.length - 1;
 		
