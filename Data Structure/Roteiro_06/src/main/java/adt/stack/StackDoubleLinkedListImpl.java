@@ -2,15 +2,11 @@ package adt.stack;
 
 import adt.linkedList.DoubleLinkedList;
 import adt.linkedList.DoubleLinkedListImpl;
-import adt.linkedList.DoubleLinkedListNode;
 
 public class StackDoubleLinkedListImpl<T> implements Stack<T> {
 
-	protected DoubleLinkedList<T> top;
+	protected DoubleLinkedListImpl<T> top;
 	protected int size;
-	protected int nowSize;
-
-	protected DoubleLinkedListImpl<T> linkedList = new DoubleLinkedListImpl<T>();
 
 	public StackDoubleLinkedListImpl(int size) {
 		this.size = size;
@@ -19,9 +15,8 @@ public class StackDoubleLinkedListImpl<T> implements Stack<T> {
 
 	@Override
 	public void push(T element) throws StackOverflowException {
-		if(nowSize < size) {
-		linkedList.insert(element);
-		nowSize++;
+		if(!isFull()) {
+			top.insert(element);
 		} else {
 			throw new StackOverflowException();
 		}
@@ -29,11 +24,10 @@ public class StackDoubleLinkedListImpl<T> implements Stack<T> {
 
 	@Override
 	public T pop() throws StackUnderflowException {
-		if(nowSize > 0) {
-			DoubleLinkedListNode<T> valor = linkedList.getLast();
-			linkedList.removeLast();
-			nowSize--;
-			return valor.getData();
+		if(!isEmpty()) {
+			T removedElement = (T) top.getLast().getData();
+			top.removeLast();
+			return removedElement;
 		} else {
 			throw new StackUnderflowException();
 		}
@@ -41,17 +35,16 @@ public class StackDoubleLinkedListImpl<T> implements Stack<T> {
 
 	@Override
 	public T top() {
-		DoubleLinkedListNode<T> valor = linkedList.getLast();
-		return valor.getData();
+		return top.getLast().getData();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return linkedList.isEmpty();
+		return top.isEmpty();
 	}
 
 	@Override
 	public boolean isFull() {
-		return nowSize == size;
+		return size == top.size();
 	}
 }

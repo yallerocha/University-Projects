@@ -32,9 +32,9 @@ public class StudentStackTest {
 
 	private void getImplementations() {
 		// TODO O aluno deve ajustar aqui para instanciar sua implementação
-		stack1 = new StackDoubleLinkedListImpl<>(10);
-		stack2 = new StackDoubleLinkedListImpl<>(2);
-		stack3 = new StackDoubleLinkedListImpl<>(0);
+		stack1 = new StackDoubleLinkedListImpl<Integer>(10);
+		stack2 = new StackDoubleLinkedListImpl<Integer>(2);
+		stack3 = new StackDoubleLinkedListImpl<Integer>(0);
 	}
 
 	// MÉTODOS DE TESTE
