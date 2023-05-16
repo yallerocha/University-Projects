@@ -25,9 +25,7 @@ public class RecursiveDoubleLinkedListImpl<T> extends
 
 	@Override
 	public void removeFirst() {
-		if(isEmpty()) {
-			return;
-		} else {
+		if(!isEmpty()) {
 			if(!next.isEmpty()) {
 				data = next.data;
 				((RecursiveDoubleLinkedListImpl<T>)next.next).previous = this;
@@ -37,22 +35,21 @@ public class RecursiveDoubleLinkedListImpl<T> extends
 				next = null;
 				previous = null;
 			}
-		}
+		} 
 	}
 
 	@Override
 	public void removeLast() {
-		if(isEmpty()) {
-			return;
-		}
-		if(next.isEmpty()) {
-			data = previous.data;
-			if(previous.isEmpty()) {
-				previous = null;
-				next = null;
-			} 
-		} else {
-			((RecursiveDoubleLinkedListImpl<T>) next).removeLast();
+		if(!isEmpty()) {
+			if(next.isEmpty()) {
+				data = previous.data;
+				if(previous.isEmpty()) {
+					previous = null;
+					next = null;
+				} 
+			} else {
+				((RecursiveDoubleLinkedListImpl<T>) next).removeLast();
+			}
 		}
 	}
 	
