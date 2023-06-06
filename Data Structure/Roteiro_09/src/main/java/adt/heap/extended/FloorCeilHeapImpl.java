@@ -12,14 +12,28 @@ public class FloorCeilHeapImpl extends HeapImpl<Integer> implements FloorCeilHea
 
 	@Override
 	public Integer floor(Integer[] array, double numero) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		Integer floor = null;
+		
+		for (Integer element: array) {
+			insert(element);
+			if (element <= numero && (floor == null || element > floor)) {
+				floor = element;
+			}
+		}
+		return floor;
 	}
 
 	@Override
 	public Integer ceil(Integer[] array, double numero) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		Integer ceil = null;
+		
+		for (Integer element: array) {
+			insert(element);
+			if (element >= numero && (ceil == null || element < ceil)) {
+				ceil = element;
+			}
+		}
+		return ceil;
 	}
 
 }

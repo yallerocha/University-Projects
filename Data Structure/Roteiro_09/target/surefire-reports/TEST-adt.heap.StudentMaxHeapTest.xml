@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="4" failures="0" name="adt.heap.StudentMaxHeapTest" time="0.008" errors="0" skipped="0">
+  <properties>
+    <property name="jansi.mode" value="strip"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="17.0.2+8"/>
+    <property name="sun.boot.library.path" value="C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\yalle\Documents\GitHub\University-Projects\Data Structure\Roteiro_09"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\yalle\Documents\GitHub\University-Projects\Data Structure\Roteiro_09"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="17.0.2+8"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\yalle\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\yalle\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf9360487305843940815.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/yalle/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/yalle/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\MinGW\mingw32\bin;C:\Users\yalle\Documents\Códigos\pyArm.ino;C:\Program Files\Git\cmd;C:\Users\yalle\vcpkg;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\yalle\vcpkg\installed\x64-windows\include\eigen3\Eigen;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\yalle\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\yalle\AppData\Local\Programs\Python\Python310\;C:\Users\yalle\AppData\Local\Microsoft\WindowsApps;C:\Users\yalle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yalle\AppData\Local\GitHubDesktop\bin;C:\apache-maven-3.8.6\bin;C:\Users\yalle\.dotnet\tools;C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse;;."/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\yalle"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="user.name" value="yalle"/>
+    <property name="java.class.path" value="C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse\plugins\org.eclipse.m2e.maven.runtime_1.18.3.20220227-1319\jars\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.home" value="C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="17.0.2"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="maven.home" value="C:\Users\yalle\Documents\GitHub\University-Projects\Data Structure\Roteiro_09\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2022-01-18"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="Temurin-17.0.2+8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="adt.heap.StudentMaxHeapTest" name="testBuild" time="0.006"/>
+  <testcase classname="adt.heap.StudentMaxHeapTest" name="testSort" time="0.001"/>
+  <testcase classname="adt.heap.StudentMaxHeapTest" name="testInsert" time="0"/>
+  <testcase classname="adt.heap.StudentMaxHeapTest" name="testRemove" time="0.001"/>
+</testsuite>
