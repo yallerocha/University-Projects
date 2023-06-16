@@ -83,23 +83,22 @@ public class AVLCountAndFillImpl<T extends Comparable<T>> extends AVLTreeImpl<T>
 	}
 
 	private boolean avlIterate (T[] array, int left, int right, int height) {
-		boolean resp = false;
+		boolean result = false;
 
 		if (right > left) {
 			int middle = left + (right - left) / 2;
 
 			if (height == 0) {
 				this.insert(array[middle]);
-				resp = true;
+				result = true;
 			} else {
 				boolean result1 = avlIterate(array, left, middle, height - 1);
 				boolean result2 = avlIterate(array, middle + 1, right, height - 1);
 
-				resp = result1 || result2;
+				result = result1 || result2;
 			}
 		}
-
-		return resp;
+		return result;
 	}
 
 }
