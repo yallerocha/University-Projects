@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="adt.avltree.StudentAVLTest" time="0.017" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="adt.avltree.StudentAVLTest" time="0.008" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\yalle\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf15412195949409489676.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\yalle\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf11895313925336608991.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/yalle/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/yalle/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\MinGW\mingw32\bin;C:\Users\yalle\Documents\Códigos\pyArm.ino;C:\Program Files\Git\cmd;C:\Users\yalle\vcpkg;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\yalle\vcpkg\installed\x64-windows\include\eigen3\Eigen;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\yalle\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\yalle\AppData\Local\Programs\Python\Python310\;C:\Users\yalle\AppData\Local\Microsoft\WindowsApps;C:\Users\yalle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yalle\AppData\Local\GitHubDesktop\bin;C:\apache-maven-3.8.6\bin;C:\Users\yalle\.dotnet\tools;C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse;;."/>
     <property name="jdk.debug" value="release"/>
@@ -59,7 +59,7 @@
     <property name="java.vendor.version" value="Temurin-17.0.2+8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="adt.avltree.StudentAVLTest" name="testInit" time="0.007"/>
-  <testcase classname="adt.avltree.StudentAVLTest" name="testInsert" time="0.002"/>
-  <testcase classname="adt.avltree.StudentAVLTest" name="testRemove" time="0.008"/>
+  <testcase classname="adt.avltree.StudentAVLTest" name="testInit" time="0.005"/>
+  <testcase classname="adt.avltree.StudentAVLTest" name="testInsert" time="0.001"/>
+  <testcase classname="adt.avltree.StudentAVLTest" name="testRemove" time="0.002"/>
 </testsuite>
