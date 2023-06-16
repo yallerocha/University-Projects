@@ -77,8 +77,9 @@ public class AVLCountAndFillImpl<T extends Comparable<T>> extends AVLTreeImpl<T>
 		this.root = new BSTNode<>();
 
 		int height = 0;
-		while (avlIterate(array, 0, array.length, height))
+		while (avlIterate(array, 0, array.length, height)) {
 			height++;
+		}
 	}
 
 	private boolean avlIterate (T[] array, int left, int right, int height) {
