@@ -14,7 +14,7 @@ public class StudentAVLTest {
 
 	@Before
 	public void setUp() {
-		avl = new AVLTreeImpl<>();
+		avl = new AVLTreeImpl<Integer>();
 	}
 
 	@Test

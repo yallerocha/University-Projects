@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="1" name="adt.heap.StudentMinHeapTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="adt.heap.StudentMinHeapTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\yalle\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf9360487305843940815.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\yalle\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3157076614995314632.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/yalle/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/yalle/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.15.10-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\MinGW\mingw32\bin;C:\Users\yalle\Documents\Códigos\pyArm.ino;C:\Program Files\Git\cmd;C:\Users\yalle\vcpkg;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\yalle\vcpkg\installed\x64-windows\include\eigen3\Eigen;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\yalle\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\yalle\AppData\Local\Programs\Python\Python310\;C:\Users\yalle\AppData\Local\Microsoft\WindowsApps;C:\Users\yalle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yalle\AppData\Local\GitHubDesktop\bin;C:\apache-maven-3.8.6\bin;C:\Users\yalle\.dotnet\tools;C:\Users\yalle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse;;."/>
     <property name="jdk.debug" value="release"/>
@@ -60,57 +60,6 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="adt.heap.StudentMinHeapTest" name="testBuild" time="0"/>
-  <testcase classname="adt.heap.StudentMinHeapTest" name="testSort" time="0.002">
-    <failure message="arrays first differed at element [0]; expected:&lt;5&gt; but was:&lt;92&gt;" type="arrays first differed at element [0]; expected">arrays first differed at element [0]; expected:&lt;5&gt; but was:&lt;92&gt;
-	at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:78)
-	at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
-	at org.junit.Assert.internalArrayEquals(Assert.java:534)
-	at org.junit.Assert.assertArrayEquals(Assert.java:285)
-	at org.junit.Assert.assertArrayEquals(Assert.java:300)
-	at adt.heap.StudentMinHeapTest.testSort(StudentMinHeapTest.java:83)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.lang.AssertionError: expected:&lt;5&gt; but was:&lt;92&gt;
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:120)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria.java:8)
-	at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:76)
-	... 38 more
-</failure>
-  </testcase>
   <testcase classname="adt.heap.StudentMinHeapTest" name="testInsert" time="0"/>
   <testcase classname="adt.heap.StudentMinHeapTest" name="testRemove" time="0"/>
 </testsuite>
