@@ -44,28 +44,28 @@ public class AVLCountAndFillImpl<T extends Comparable<T>> extends AVLTreeImpl<T>
 		BSTNode<T> newRoot = null;
 		int balance = this.calculateBalance(node);
 
-		if (Math.abs(balance) > 1)
-			if (balance > 1)
+		if (Math.abs(balance) > 1) {
+			if (balance > 1) {
 				if (this.calculateBalance((BSTNode<T>) node.getLeft()) >= 0) {
 					newRoot = Util.rightRotation(node);
 					this.LLcounter++;
-				}
-				else {
+				} else {
 					newRoot = Util.doubleRightRotation(node);
 					this.LRcounter++;
 				}
-			else
-			if (this.calculateBalance((BSTNode<T>) node.getRight()) <= 0) {
-				newRoot = Util.leftRotation(node);
-				this.RRcounter++;
+			} else {
+				if (this.calculateBalance((BSTNode<T>) node.getRight()) <= 0) {
+					newRoot = Util.leftRotation(node);
+					this.RRcounter++;
+				} else {
+					newRoot = Util.doubleLeftRotation(node);
+					this.RLcounter++;
+				}
 			}
-			else {
-				newRoot = Util.doubleLeftRotation(node);
-				this.RLcounter++;
-			}
-
-		if (this.getRoot().equals(node) && newRoot != null)
+		}
+		if (this.getRoot().equals(node) && newRoot != null) {
 			this.root = newRoot;
+		}
 	}
 
 	@SuppressWarnings("unchecked")

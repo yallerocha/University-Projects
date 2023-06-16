@@ -31,15 +31,14 @@ public class BSTVerifierImpl<T extends Comparable<T>> implements BSTVerifier<T> 
 	private boolean isBSTRecursive (BTNode<T> currentNode) {
         boolean resp = true;
 
-	    if (!currentNode.isEmpty())
-            if (this.isValidLeft(currentNode) && this.isValidRight(currentNode))
-                resp =
-                        this.isBSTRecursive(currentNode.getLeft())
-                                &&
-                                this.isBSTRecursive(currentNode.getRight());
-            else
+	    if (!currentNode.isEmpty()) {
+            if (this.isValidLeft(currentNode) && this.isValidRight(currentNode)) {
+                resp = this.isBSTRecursive(currentNode.getLeft())
+                		&& this.isBSTRecursive(currentNode.getRight());
+            } else {
                 resp = false;
-
+            }
+	    }
         return resp;
     }
 
@@ -50,15 +49,14 @@ public class BSTVerifierImpl<T extends Comparable<T>> implements BSTVerifier<T> 
     private boolean isValidLeft (BTNode<T> currentNode, BTNode<T> root) {
         boolean resp = true;
 
-        if (!currentNode.isEmpty())
-            if (currentNode.getData().compareTo(root.getData()) < 0)
-                resp =
-                        this.isValidLeft(currentNode.getLeft(), root)
-                                &&
-                                this.isValidLeft(currentNode.getRight(), root);
-            else
+        if (!currentNode.isEmpty()) {
+            if (currentNode.getData().compareTo(root.getData()) < 0) {
+                resp = this.isValidLeft(currentNode.getLeft(), root)
+                		&& this.isValidLeft(currentNode.getRight(), root);
+            } else {
                 resp = false;
-
+            }
+        }
         return resp;
 	}
 
@@ -69,15 +67,14 @@ public class BSTVerifierImpl<T extends Comparable<T>> implements BSTVerifier<T> 
     private boolean isValidRight (BTNode<T> currentNode, BTNode<T> root) {
         boolean resp = true;
 
-        if (!currentNode.isEmpty())
-            if (currentNode.getData().compareTo(root.getData()) > 0)
-                resp =
-                        this.isValidRight(currentNode.getLeft(), root)
-                                &&
-                                this.isValidRight(currentNode.getRight(), root);
-            else
+        if (!currentNode.isEmpty()) {
+            if (currentNode.getData().compareTo(root.getData()) > 0) {
+                resp = this.isValidRight(currentNode.getLeft(), root)
+                		&& this.isValidRight(currentNode.getRight(), root);
+        	} else {
                 resp = false;
-
+            }
+        }
         return resp;
     }
 
