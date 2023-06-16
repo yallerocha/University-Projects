@@ -30,9 +30,10 @@ public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements 
 	protected int calculateBalance (BSTNode<T> node) {
 		int resp = 0;
 
-		if (!node.isEmpty())
+		if (!node.isEmpty()) {
 			resp = this.heightRecursive((BSTNode<T>) node.getLeft())
 					- this.heightRecursive((BSTNode<T>) node.getRight());
+		}
 		return resp;
 	}
 
@@ -41,20 +42,24 @@ public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements 
 		BSTNode<T> newRoot = null;
 		int balance = this.calculateBalance(node);
 
-		if (Math.abs(balance) > 1)
-			if (balance > 1)
-				if (this.calculateBalance((BSTNode<T>) node.getLeft()) >= 0)
+		if (Math.abs(balance) > 1) {
+			if (balance > 1) {
+				if (this.calculateBalance((BSTNode<T>) node.getLeft()) >= 0) {
 					newRoot = Util.rightRotation(node);
-				else
+				} else {
 					newRoot = Util.doubleRightRotation(node);
-			else
-				if (this.calculateBalance((BSTNode<T>) node.getRight()) <= 0)
+				}
+			} else {
+				if (this.calculateBalance((BSTNode<T>) node.getRight()) <= 0) {
 					newRoot = Util.leftRotation(node);
-				else
+				} else {
 					newRoot = Util.doubleLeftRotation(node);
-
-		if (this.getRoot().equals(node) && newRoot != null)
+				}
+			}
+		}
+		if (this.getRoot().equals(node) && newRoot != null) {
 			this.root = newRoot;
+		}
 	}
 
 	// AUXILIARY
@@ -98,8 +103,14 @@ public class AVLTreeImpl<T extends Comparable<T>> extends BSTImpl<T> implements 
 					node.setLeft(null);
 					node.setRight(null);
 					rebalanceUp(node);
-				} else if (node.getRight().isEmpty() || node.getLeft().isEmpty()) { 
-					BSTNode<T> childNode = node.getRight().isEmpty() ? (BSTNode<T>) node.getLeft() : (BSTNode<T>) node.getRight();
+				} else if (node.getRight().isEmpty() || node.getLeft().isEmpty()) {
+					BSTNode<T> childNode = null;
+					
+					if(node.getRight().isEmpty()) {
+						childNode = (BSTNode<T>) node.getLeft();
+					} else {
+						childNode = (BSTNode<T>) node.getRight();
+					}
 					if (this.root.equals(node)) {
 						this.root = childNode;
 						this.root.setParent(null);

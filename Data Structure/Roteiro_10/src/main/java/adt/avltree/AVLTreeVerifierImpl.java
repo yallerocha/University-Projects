@@ -19,6 +19,7 @@ public class AVLTreeVerifierImpl<T extends Comparable<T>> extends BSTVerifierImp
 		this.avlTree = (AVLTreeImpl<T>) avlTree;
 	}
 
+	@SuppressWarnings("unused")
 	private AVLTreeImpl<T> getAVLTree() {
 		return avlTree;
 	}
@@ -35,15 +36,14 @@ public class AVLTreeVerifierImpl<T extends Comparable<T>> extends BSTVerifierImp
 	private boolean isAVLRecursive (BSTNode<T> currentNode) {
 		boolean resp = true;
 
-		if (!currentNode.isEmpty())
-			if (Math.abs(this.avlTree.calculateBalance(currentNode)) <= 1)
-				resp =
-						this.isAVLRecursive((BSTNode<T>) currentNode.getLeft())
-								&&
-								this.isAVLRecursive((BSTNode<T>) currentNode.getRight());
-			else
+		if (!currentNode.isEmpty()) {
+			if (Math.abs(this.avlTree.calculateBalance(currentNode)) <= 1) {
+				resp = this.isAVLRecursive((BSTNode<T>) currentNode.getLeft())
+						&& this.isAVLRecursive((BSTNode<T>) currentNode.getRight());
+			} else {
 				resp = false;
-
+			}
+		}
 		return resp;
 	}
 
