@@ -28,39 +28,43 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 	public int heightRecursive (BSTNode<T> currentNode) {
 		int resp = -1;
 
-		if (!currentNode.isEmpty())
-			resp = 1 + Math.max(
-					this.heightRecursive((BSTNode<T>) currentNode.getLeft()),
-					this.heightRecursive((BSTNode<T>) currentNode.getRight())
-			);
-
+		if (!currentNode.isEmpty()) {
+			resp = 1 + Math.max(this.heightRecursive((BSTNode<T>) currentNode.getLeft()),
+					this.heightRecursive((BSTNode<T>) currentNode.getRight()));
+		}
 		return resp;
 	}
 
 	@Override
 	public BSTNode<T> search(T element) {
-		return element == null
-				? new BSTNode<>()
-				: this.searchRecursive(this.root, element);
+		BSTNode<T> result = null;
+		
+		if(element == null) {
+			result = new BSTNode<>();
+		} else {
+			result = this.searchRecursive(this.root, element);
+		}
+		return result;
 	}
 
 	private BSTNode<T> searchRecursive (BSTNode<T> currentNode, T element) {
 		BSTNode<T> resp;
 
-		if (currentNode.isEmpty() || currentNode.getData().equals(element))
+		if (currentNode.isEmpty() || currentNode.getData().equals(element)) {
 			resp = currentNode;
-		else if (element.compareTo(currentNode.getData()) > 0)
+		} else if (element.compareTo(currentNode.getData()) > 0) {
 			resp = this.searchRecursive((BSTNode<T>) currentNode.getRight(), element);
-		else
+		} else {
 			resp = this.searchRecursive((BSTNode<T>) currentNode.getLeft(), element);
-
+		}
 		return resp;
 	}
 
 	@Override
 	public void insert(T element) {
-		if (element != null)
+		if (element != null) {
 			this.insertRecursive(this.root, element);
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -69,75 +73,109 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 			currentNode.setData(element);
 			currentNode.setRight(new BSTNode.Builder<T>().parent(currentNode).build());
 			currentNode.setLeft(new BSTNode.Builder<T>().parent(currentNode).build());
-		} else
-			if (element.compareTo(currentNode.getData()) > 0)
+		} else {
+			if (element.compareTo(currentNode.getData()) > 0) {
 				this.insertRecursive((BSTNode<T>) currentNode.getRight(), element);
-			else
+			} else {
 				this.insertRecursive((BSTNode<T>) currentNode.getLeft(), element);
+			}
+		}
 	}
 
 	@Override
 	public BSTNode<T> maximum() {
-		return this.isEmpty()
-				? null
-				: this.maximumRecursive(this.root);
+		BSTNode<T> result = null;
+		
+		if (!this.isEmpty()) {
+			this.maximumRecursive(this.root);
+	    }
+		return result;
 	}
 
 	private BSTNode<T> maximumRecursive (BSTNode<T> currentNode) {
-		return currentNode.getRight().isEmpty()
-				? currentNode
-				: this.maximumRecursive((BSTNode<T>) currentNode.getRight());
+		BSTNode<T> result = null;
+		
+		if (currentNode.getRight().isEmpty()) {
+			result = currentNode;
+	    } else {
+	    	result = this.maximumRecursive((BSTNode<T>) currentNode.getRight());
+	    }
+		return result;
 	}
 
 	@Override
 	public BSTNode<T> minimum() {
-		return this.isEmpty()
-				? null
-				: this.minimumRecursive(this.root);
+	BSTNode<T> result = null;
+		
+		if (!this.isEmpty()) {
+			this.minimumRecursive(this.root);
+	    }
+		return result;
 	}
 
 	private BSTNode<T> minimumRecursive (BSTNode<T> currentNode) {
-		return currentNode.getLeft().isEmpty()
-				? currentNode
-				: this.minimumRecursive((BSTNode<T>) currentNode.getLeft());
+		BSTNode<T> result = null;
+		
+		if (currentNode.getLeft().isEmpty()) {
+			result = currentNode;
+	    } else {
+	    	result = this.minimumRecursive((BSTNode<T>) currentNode.getLeft());
+	    }
+		return result;
 	}
 
 	@Override
 	public BSTNode<T> sucessor(T element) {
 		BSTNode<T> node = this.search(element);
 
-		if (!node.isEmpty())
-			if (!node.getRight().isEmpty())
+		if (!node.isEmpty() && node != null) {
+			if (!node.getRight().isEmpty()) {
 				node = this.minimumRecursive((BSTNode<T>) node.getRight());
-			else
+			} else {
 				node = this.sucessorRecursive(node, element);
-
-		return (node == null || node.isEmpty()) ? null : node;
+			}
+		} else {
+			node = null;
+		}
+		return node;
 	}
 
 	private BSTNode<T> sucessorRecursive (BSTNode<T> currentNode, T element) {
-		return currentNode != null && currentNode.getData().compareTo(element) <= 0
-				? this.sucessorRecursive((BSTNode<T>) currentNode.getParent(), element)
-				: currentNode;
+		BSTNode<T> result = null;
+		
+		if(currentNode != null && currentNode.getData().compareTo(element) <= 0) {
+			result = this.sucessorRecursive((BSTNode<T>) currentNode.getParent(), element);
+		} else {
+			result = currentNode;
+		}	
+		return result;
 	}
 
 	@Override
 	public BSTNode<T> predecessor(T element) {
 		BSTNode<T> node = this.search(element);
 
-		if (!node.isEmpty())
-			if (!node.getLeft().isEmpty())
+		if (!node.isEmpty() && node != null) {
+			if (!node.getLeft().isEmpty()) {
 				node = this.maximumRecursive((BSTNode<T>) node.getLeft());
-			else
+			} else {
 				node = this.predecessorRecursive(node, element);
-
-		return (node == null || node.isEmpty()) ? null : node;
+			}
+		} else {
+			node = null;
+		}
+		return node;
 	}
 
 	private BSTNode<T> predecessorRecursive (BSTNode<T> currentNode, T element) {
-		return currentNode != null && currentNode.getData().compareTo(element) >= 0
-				? this.predecessorRecursive((BSTNode<T>) currentNode.getParent(), element)
-				: currentNode;
+		BSTNode<T> result = null;
+		
+		if(currentNode != null && currentNode.getData().compareTo(element) >= 0) {
+			result = this.predecessorRecursive((BSTNode<T>) currentNode.getParent(), element);
+		} else {
+			result = currentNode;
+		}
+		return result;
 	}
 
 	@Override
@@ -146,24 +184,30 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 			BSTNode<T> node = this.search(element);
 
 			if (!node.isEmpty()) {
-				if (node.isLeaf()) { // Caso 1: nó a ser removido é folha
+				if (node.isLeaf()) { 
 					node.setData(null);
 					node.setLeft(null);
 					node.setRight(null);
-				} else if (node.getRight().isEmpty() || node.getLeft().isEmpty()) { // Caso 2: nó a ser removido tem um filho
-					BSTNode<T> childNode = node.getRight().isEmpty() ? (BSTNode<T>) node.getLeft() : (BSTNode<T>) node.getRight();
+				} else if (node.getRight().isEmpty() || node.getLeft().isEmpty()) { 			
+					BSTNode<T> childNode = null;
+					
+					if(node.getRight().isEmpty()) {
+						childNode = (BSTNode<T>) node.getLeft();
+					} else {
+						childNode = (BSTNode<T>) node.getRight();
+					}
 					if (this.root.equals(node)) {
 						this.root = childNode;
 						this.root.setParent(null);
-					}
-					else {
+					} else {
 						childNode.setParent(node.getParent());
-						if (node.getParent().getLeft().equals(node))
+						if (node.getParent().getLeft().equals(node)) {
 							node.getParent().setLeft(childNode);
-						else
+						} else {
 							node.getParent().setRight(childNode);
+						}
 					}
-				} else { // Caso 3: nó a ser removido tem dois filhos
+				} else { 
 					T sucessor = this.sucessor(node.getData()).getData();
 					this.remove(sucessor);
 					node.setData(sucessor);
@@ -184,7 +228,6 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 			this.preOrderRecursive((BSTNode<T>) currentNode.getLeft(), list);
 			this.preOrderRecursive((BSTNode<T>) currentNode.getRight(), list);
 		}
-
 		return (T[]) list.toArray(new Comparable[0]);
 	}
 
